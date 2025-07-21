@@ -47,6 +47,12 @@
         .next{
             display: none;
         }
+        .ans{
+            position: fixed;
+            bottom: 17vh;
+            font-size: 20px;
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -57,6 +63,7 @@
     <div class="chosse4 chosse">vn4</div>
     <div class="check">check</div>
     <div class="next">next</div>
+    <div class="ans">ans</div>
 </body>
 <script>
     var vocabulary = [
@@ -423,7 +430,9 @@ check.addEventListener("click",()=>{
     ch[op].style.backgroundColor = 'green'; 
     else ch[op].style.backgroundColor = 'red'; 
     check.style.display = 'none';
-    next.style.display = 'flex' })
+    next.style.display = 'flex'
+    document.querySelector(".ans").textContent = `Đáp án: ${vocabulary[index][1]}`
+    document.querySelector(".ans").style.display = 'block' })
 next.addEventListener("click",()=>{
     op=-1
     check.style.display = 'flex';
@@ -445,6 +454,7 @@ next.addEventListener("click",()=>{
     chosse3.textContent = chosse[2][1]
     chosse4.textContent = chosse[3][1]
     en.textContent = vocabulary[index][0]
+    document.querySelector(".ans").style.display = 'none'
 })
 </script>
 </html>
