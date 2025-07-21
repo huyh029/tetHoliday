@@ -439,6 +439,7 @@ next.addEventListener("click",()=>{
     }
     chosse = []
     chosse = [...getRandomUniqueElements(vocabulary,3,index),vocabulary[index]]
+    shuffleArray(chosse)
     chosse1.textContent = chosse[0][1]
     chosse2.textContent = chosse[1][1]
     chosse3.textContent = chosse[2][1]
