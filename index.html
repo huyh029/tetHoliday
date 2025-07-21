@@ -409,7 +409,7 @@ function chos(e){
     chosse4.style.background = 'none'
     e.style.backgroundColor = '#f1f1f1'
 }
-var op = 0 
+var op = -1 
 chosse1.addEventListener("click",()=>{chos(chosse1);op=0})
 chosse2.addEventListener("click",()=>{chos(chosse2);op=1})
 chosse3.addEventListener("click",()=>{chos(chosse3);op=2})
@@ -417,12 +417,15 @@ chosse4.addEventListener("click",()=>{chos(chosse4);op=3})
 var ch = [chosse1,chosse2,chosse3,chosse4]
 var check = document.querySelector(".check")
 var next = document.querySelector(".next")
-check.addEventListener("click",()=>{if(chosse[op][1].trim()==vocabulary[index][1].trim()) 
+check.addEventListener("click",()=>{
+    if(op==-1) return;
+    if(chosse[op][1].trim()==vocabulary[index][1].trim()) 
     ch[op].style.backgroundColor = 'green'; 
     else ch[op].style.backgroundColor = 'red'; 
     check.style.display = 'none';
     next.style.display = 'flex' })
 next.addEventListener("click",()=>{
+    op=-1
     check.style.display = 'flex';
     next.style.display = 'none'
     chosse1.style.background = 'none'
